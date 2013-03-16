@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Point in a circle</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			color:black;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="xCoord">X: </label>
+	<input type="text" id="xCoord"/>
+	<br />							  
+	<label for="yCoord">Y: </label>
+	<input type="text" id="yCoord"/>
+	<br />
+	<a href="#" onclick="checkPoint()">Check</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>														 
+
+		function checkPoint() {
+			var xCoord = jsConsole.readFloat("#xCoord");
+			var yCoord = jsConsole.readFloat("#yCoord");
+			
+			if ((xCoord*xCoord+yCoord*yCoord)<25)
+			{
+				jsConsole.writeLine("Point (" + xCoord + ", " + yCoord+ ") is within the circle");
+			}	
+			else if ((xCoord*xCoord+yCoord*yCoord)==25)
+			{
+				jsConsole.writeLine("Point (" + xCoord + ", " + yCoord+ ") is over the circle");
+			}
+			else
+			{
+				jsConsole.writeLine("Point (" + xCoord + ", " + yCoord+ ") is out of the circle");
+			}
+		}
+	</script>			  
+</body>
+</html>

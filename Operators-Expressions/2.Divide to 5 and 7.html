@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Devide to 5 and 7</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border: 1px solid black;
+			padding: 5px 15px;
+			color: black;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+	<label for="divide">Number: </label>
+	<input type="text" id="divide" />
+	<br />
+	<a href="#" onclick="checkDivision()">Check division</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function checkDivision() {
+			var number = jsConsole.readInteger("#divide");
+			if (number%5==0&&number%7==0)
+			{
+				jsConsole.writeLine(number + " can be divided to 5 and 7");
+			}
+			else
+			{
+				jsConsole.writeLine(number + " can't be divided to 5 and 7");
+			}			
+		}
+	</script>
+</body>
+</html>
